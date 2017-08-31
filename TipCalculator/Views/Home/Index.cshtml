@@ -1,0 +1,40 @@
+﻿@model TipCalculator.Models.TipCalculations
+@{
+
+}
+<br />
+<div class="container col-md-off-1">
+    @Html.ValidationSummary(true)
+
+
+    @using ( Html.BeginForm("TipCalculator", "Home", FormMethod.Post) )
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.BillAmount)
+            @Html.TextBoxFor(m => m.BillAmount, new { @class = "form-control", type = "", placeholder = "Bill Amount" })
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.BillAmount)</span>
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Tip)
+            @Html.TextBoxFor(m => m.Tip, new { @class = "form-control", placeholder = "Tip Percentage" })
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Tip)</span>
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.NumberOfPeople)
+            @Html.TextBoxFor(m => m.NumberOfPeople, new { @class = "form-control", placeholder = "Number of People" })
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.NumberOfPeople)</span>
+
+        </div>
+
+        <br />
+                <button type="submit" class="btn btn-primary">Calculate Tip</button>
+                <br/>
+                <div>
+                    @{   Html.RenderPartial("TipCalculator2", Model);
+                    }
+                </div>   }
+    
+</div>
+

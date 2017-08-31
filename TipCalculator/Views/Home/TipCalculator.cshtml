@@ -1,0 +1,54 @@
+﻿@model TipCalculator.Models.TipCalculations
+
+@{
+
+}
+@section Results{
+<br/>
+
+                        <div class="Container col-md-offset-1 col-md-6 ">
+       @using (Html.BeginForm("Index","Home",FormMethod.Get)) {
+            <div class="table col-md-4">
+                <div class="row">
+                    @Html.LabelFor(m=>m.BillAmount)
+                    @Html.TextBoxFor(m => m.BillAmount, new { @class = "form-control", placeholder = "Bill Amount" })
+                    
+                </div>
+                <p />
+                <div class="row">
+                    @Html.LabelFor(m => m.Tip)
+                    @Html.TextBoxFor(m => m.Tip, new { @class = "form-control", placeholder = "Tip Percentage" })
+                    
+                </div>
+                <p />
+                <div class="row">
+                    @Html.LabelFor(m => m.NumberOfPeople)
+                    @Html.TextBoxFor(m => m.NumberOfPeople, new { @class = "form-control", placeholder = "Number of People" })
+                    
+                </div>
+                <p />
+                <div class="row">
+                    @Html.LabelFor(m => m.TotalTip)
+                    @Html.TextBoxFor(m => m.TotalTip, new { @class = "form-control", placeholder = "Total Tip" })
+                   
+                </div>
+                <p />
+                <div class="row">
+                    @Html.LabelFor(m => m.TipPerPerson)
+                    @Html.TextBoxFor(m => m.TipPerPerson, new { @class = "form-control", placeholder = "Tip per Person" })
+                    
+                </div>
+                <p />
+                <div class="row">
+                    @Html.LabelFor(m => m.TotalBill)
+                    @Html.TextBoxFor(m => m.TotalBill, new { @class = "form-control", placeholder = "Total Bill" })
+                   
+                </div>
+                <p />
+            </div>
+            <p />
+            <button type="submit" class="btn btn-primary">Reset</button>
+
+       }
+    </div>
+    }

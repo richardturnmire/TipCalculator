@@ -1,0 +1,38 @@
+﻿@model TipCalculator.Models.TipCalculations
+
+
+@section Results{
+    <br />
+
+    <div class="Container col-md-offset-1 col-md-6 ">
+       
+       
+            <div class="table col-md-4">
+                
+                <p />
+                <div class="row">
+                    @Html.LabelFor(m => m.TotalTip)
+                    @Html.TextBoxFor(m => m.TotalTip, new { @class = "form-control", placeholder = "Total Tip" })
+
+                </div>
+                <p />
+                <div class="row">
+                    @Html.LabelFor(m => m.TipPerPerson)
+                    @Html.TextBoxFor(m => m.TipPerPerson, new { @class = "form-control", placeholder = "Tip per Person" })
+
+                </div>
+                <p />
+                <div class="row">
+                    @Html.LabelFor(m => m.TotalBill)
+                    @Html.TextBoxFor(m => m.TotalBill, new { @class = "form-control", placeholder = "Total Bill" })
+
+                </div>
+                <p />
+            </div>
+           
+    </div>
+}
+
+
+
+
